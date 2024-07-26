@@ -65,13 +65,13 @@ def downsize_average(data, window_size):
     return averaged_data
 
 
-# def moving_average(a, window_size):
-#     cumulative_sum = np.cumsum(np.insert(a, 0, 0))
-#     middle = (cumulative_sum[window_size:] - cumulative_sum[:-window_size]) / window_size
-#     r = np.arange(1, window_size - 1, 2)
-#     begin = np.cumsum(a[:window_size - 1])[::2] / r
-#     end = (np.cumsum(a[:-window_size:-1])[::2] / r)[::-1]
-#     return np.concatenate((begin, middle, end))
+def moving_average(a, window_size):
+    cumulative_sum = np.cumsum(np.insert(a, 0, 0))
+    middle = (cumulative_sum[window_size:] - cumulative_sum[:-window_size]) / window_size
+    r = np.arange(1, window_size - 1, 2)
+    begin = np.cumsum(a[:window_size - 1])[::2] / r
+    end = (np.cumsum(a[:-window_size:-1])[::2] / r)[::-1]
+    return np.concatenate((begin, middle, end))
 
 
 def train_on_policy_agent(env, agent, num_episodes):
