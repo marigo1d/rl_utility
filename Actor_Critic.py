@@ -91,7 +91,7 @@ class ActorCritic:
 
 
 if __name__ == "__main__":
-    env_name = 'CartPole-v0'
+    env_name = 'CartPole-v1'
     # env = gym.make(env_name, render_mode="human")
     env = gym.make(env_name)
     torch.manual_seed(0)

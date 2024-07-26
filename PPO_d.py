@@ -119,7 +119,7 @@ if __name__ == "__main__":
                 transition_dict = {'states': [], 'actions': [], 'next_states': [], 'rewards': [], 'dones': []}
                 state = env.reset()[0]
                 done = False
-                while not done:
+                while not done:  # 中止存在问题
                     action = agent.take_action(state)
                     next_state, reward, done, info, _ = env.step(action)
                     transition_dict['states'].append(state)

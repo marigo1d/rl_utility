@@ -110,7 +110,7 @@ class PPOContinuous:
 
 
 if __name__ == "__main__":
-    env_name = 'Pendulum-v1'
+    env_name = 'Pendulum-v1'  # 该环境无中止条件，需自行添加
     env = gym.make(env_name)
     # env.seed(0)
     torch.manual_seed(0)
